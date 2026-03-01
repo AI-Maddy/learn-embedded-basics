@@ -1,0 +1,41 @@
+.. _c2000_adc:
+
+====================
+TI C2000 ADC (F28027)
+====================
+
+**Type:** 12-bit or 16-bit SAR ADC, deterministic timing
+
+**How to Configure:**
+- Enable ADC module
+- Configure input channel
+- Set acquisition window
+- Set ADC clock
+- Configure SOC (Start-of-Conversion) triggers
+
+**How to Read:**
+- Start conversion (software or hardware trigger)
+- Wait for EOC flag
+- Read result from result register
+
+**What else to cover:**
+- Multiple SOCs for sequenced conversions
+- Interrupt-driven conversion
+- Calibration
+- Example code snippets
+
+**Bring-Up Sequence:**
+- Configure ADC clock and trigger source
+- Set sample window for source impedance
+- Validate conversion timing with control loop
+- Add calibration/offset compensation if needed
+
+**Validation Checklist:**
+- Stable reading at fixed input
+- Trigger alignment with PWM/control timing
+- Expected conversion latency observed
+
+**Common Pitfalls:**
+- Too-short acquisition window
+- Trigger source mismatch
+- Ignoring calibration requirements
