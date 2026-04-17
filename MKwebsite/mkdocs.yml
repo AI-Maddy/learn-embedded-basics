@@ -1,0 +1,97 @@
+site_name: "Learn Embedded Basics"
+site_description: "Baremetal embedded systems — from GPIO to RTOS-ready driver architecture"
+site_author: "Madhavan"
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.copy
+    - content.code.annotate
+
+plugins:
+  - search
+  - glightbox
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - getting-started/index.md
+    - Learning Path: getting-started/learning-path.md
+    - Toolchain Setup: getting-started/toolchain-setup.md
+    - Datasheet Reading: getting-started/datasheet-reading.md
+  - Fundamentals:
+    - fundamentals/index.md
+    - Memory-Mapped IO: fundamentals/memory-mapped-io.md
+    - Startup Code: fundamentals/startup-code.md
+    - Linker Scripts: fundamentals/linker-scripts.md
+    - Debugging: fundamentals/debugging.md
+  - Peripherals:
+    - peripherals/index.md
+    - GPIO: peripherals/gpio.md
+    - UART: peripherals/uart.md
+    - SPI: peripherals/spi.md
+    - I2C: peripherals/i2c.md
+    - Timers: peripherals/timers.md
+    - PWM: peripherals/pwm.md
+    - ADC: peripherals/adc.md
+    - Interrupts: peripherals/interrupts.md
+  - Drivers:
+    - drivers/index.md
+    - GPIO Driver: drivers/gpio-driver.md
+    - UART Driver: drivers/uart-driver.md
+    - I2C Driver: drivers/i2c-driver.md
+    - SPI Driver: drivers/spi-driver.md
+  - MCU Profiles:
+    - mcu-profiles/index.md
+    - STM32F103: mcu-profiles/stm32f103.md
+    - AVR ATmega328P: mcu-profiles/avr-atmega328p.md
+    - RP2040: mcu-profiles/rp2040.md
+    - MSP430: mcu-profiles/msp430.md
+    - nRF52832: mcu-profiles/nrf52832.md
+  - Cheatsheet: cheatsheet.md
+  - Patterns: patterns.md
